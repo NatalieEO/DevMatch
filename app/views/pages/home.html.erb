@@ -11,7 +11,7 @@
                 <h4>Sign up for free and get basic access to the community.</h4>
                 <br>
                 <!-- (plan: @basic_plan.id) passes information through URL. Similar for pro_plan.
-                Will be used in a conditional statement to display appropriate sign up form.
+                Will be used in a conditional statement to display appropriate sign up form on new.html.erb.
                 Instance variable defined in pages_controller file-->
                 <%= link_to "Sign up with Basic", new_user_registration_path(plan: @basic_plan.id), class: "btn btn-primary btn-lg btn-block" %>
             </div>
