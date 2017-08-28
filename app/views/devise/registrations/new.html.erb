@@ -12,8 +12,10 @@
         <% end %>
       </div>  
       
+      <!-- Will render either a basic or pro form (called from different, partial html files)
+      _file_name.html.erb ... _ indicates partial file in rails. Render function calls upon partial files
+      -->
       <div class="well">
-        <!-- Conditional statement using information produced from home.html.erb. Renders partial HTML file-->
         <h2>Sign up</h2>
         <% if params[:plan] == '2' %>
           <%= render "pro_form" %>
