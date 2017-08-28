@@ -6,6 +6,7 @@ class ContactsController < ApplicationController
    end
    
    def create
+      #instance variable contact is assigned information from the contact form from new.html.erb file
       @contact = Contact.new(contact_params)
       if @contact.save
          redirect_to new_contact_path, notice: "Message sent."
@@ -14,7 +15,7 @@ class ContactsController < ApplicationController
       end
    end
    
-   #whitelists
+   #whitelists. 
    private
       def contact_params
          params.require(:contact).permit(:name, :email, :comments)
