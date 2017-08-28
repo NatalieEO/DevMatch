@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
    def create
       #instance variable contact is assigned information from the contact form from new.html.erb file
       @contact = Contact.new(contact_params)
+      #flash is like a list of key value pairs {key: value, error: asdfkl}
       if @contact.save
          flash[:success] = "Message sent."
          redirect_to new_contact_path
