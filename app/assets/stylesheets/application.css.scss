@@ -43,6 +43,7 @@ h1, h2, h3 {
    font-weight: 800;
 }
 
+//targets the devmatch brand/text and About, Contact Us
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li >  a {
    color: white;
@@ -52,10 +53,12 @@ h1, h2, h3 {
    }
 }
 
+//small bars in navigation button. Only on smaller screen
 .navbar-default .navbar-toggle .icon-bar {
    background-color: white;
 }
 
+//navigation button that appears on smaller screen
 .navbar-default .navbar-toggle {
    border: 2px solid white;
    &:hover, &:focus {
@@ -72,6 +75,7 @@ h1, h2, h3 {
    padding-bottom: 100px;
 }
 
+// Only hides flash notices from logging in or logging out
 .alert-notice {
    display: none;
 }
