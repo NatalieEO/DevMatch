@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<!-- File name needs to match exactly the function name written in the 
+contacts_mailer.rb file-->
+<html>
+    <head>
+    </head>
+    
+    <body>
+        <!-- instance variables come from contact_mailer.rb file -->
+        <p>You have received a message from the site's contact form
+        <%= "#{@name}, #{@email}." %></p>
+        <p><%= @body %></p>
+    </body>
+</html>
