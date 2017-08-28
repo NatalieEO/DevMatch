@@ -1,14 +1,18 @@
 class ContactsController < ApplicationController
-   # Every time someone pulls up the form, rails will create a new, blank object
+   
+   # GET request to /contact-us/ Every time someone pulls up the form, rails will create a new, blank object
    # and store it in front of instance(@) variable
    def new
       @contact = Contact.new
    end
    
+   # POST request /contacts
    def create
+      # Mass assignment of form fields into Contact object
       # instance variable contact is assigned information from the contact form from new.html.erb file
       @contact = Contact.new(contact_params)
       
+      # Save the Contact object to the database
       # flash is like a list of key value pairs {key: value, error: asdfkl}
       # :success, :danger chosen as names for bootstrap alerts
       if @contact.save
@@ -24,14 +28,19 @@ class ContactsController < ApplicationController
          
          flash[:success] = "Message sent."
          redirect_to new_contact_path
+         
+      # If contact object doesn't save, store errors in flash hash and redirect to the new action
+      # Full_messages give user full sentence for error. .join separates
+      # out the error messages nicely.
       else
          flash[:danger] = @contact.errors.full_messages.join(", ")
          redirect_to new_contact_path
       end
    end
    
-   #whitelists. 
    private
+      # To collect data from form, we need to use strong parameters
+      # and whitelist the form fields
       def contact_params
          params.require(:contact).permit(:name, :email, :comments)
       end
