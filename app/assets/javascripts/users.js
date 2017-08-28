@@ -12,8 +12,9 @@ $(document).on('turbolinks:load', function(){
    Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
    
    
-   //When user clicks form submit button, prevent default submission behavior.
+   //When user clicks form submit button, 
    submitBtn.click(function(event){
+      //prevent default submission behavior. Then, change submit-btn text and disable it.
       event.preventDefault();
       submitBtn.val("Processing").prop('disabled', true);
       
@@ -22,7 +23,8 @@ $(document).on('turbolinks:load', function(){
           cvcNum = $('#card_code').val(),
           expMonth = $('#card_month').val(),          //grabs them using CSS selectors
           expYear = $('#card_year').val();
-          
+      
+      
       //Use Stripe JS library to check for card errors. Initialize with no errors.
       var error = false;
       
