@@ -9,9 +9,11 @@ class ContactsController < ApplicationController
       #instance variable contact is assigned information from the contact form from new.html.erb file
       @contact = Contact.new(contact_params)
       if @contact.save
-         redirect_to new_contact_path, notice: "Message sent."
+         flash[:success] = "Message sent."
+         redirect_to new_contact_path
       else
-         redirect_to new_contact_path, notice: "Error occured"
+         flash[:error] = @contact.errors.full_messages.join(", ")
+         redirect_to new_contact_path
       end
    end
    
