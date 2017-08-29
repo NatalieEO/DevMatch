@@ -17,7 +17,9 @@ class ProfilesController < ApplicationController
       
       if @profile.save
          flash[:success] = "Profile updated!"
-         redirect_to root_path
+         # Redirects to user profile once they submit their information.
+         # Needs to inject the user id into the URL path.
+         redirect_to user_path(params[:user_id])
       else
          render action: :new
       end
