@@ -75,14 +75,14 @@ h1, h2, h3 {
    padding-bottom: 100px;
 }
 
-// Only hides flash notices from logging in or logging out
+
 .flash-container {
-  position: absolute;
-  width: 100%;
+ position: absolute;
+ width: 100%;
 }
 
 // For the varying alerts displayed to a user
-.alert-notice, .alert-alert {
+.alert-notice, .alert-alert{
   color:white;
   text-align: center;
   font-size: 16px;
@@ -90,6 +90,16 @@ h1, h2, h3 {
   background: rgba(255, 255, 255, 0.2);
   //border-color: rgba(255, 255, 255, 0.5);
   margin-top: -14px;
+}
+
+// Fixes alerts for contact page
+.alert-danger, .alert-success {
+   text-align: center;
+}
+
+// in contacts_controller
+.contact-us {
+   margin-top: 70px;
 }
 
 .home-signup-links {
