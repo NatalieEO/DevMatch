@@ -7,6 +7,10 @@ class UsersController < ApplicationController
    def show
       # Find in the database the user with the id number that matches the URL
       @user = User.find( params[:id] )
+   end
+   
+   def index
+      
    end   
    
 end    
