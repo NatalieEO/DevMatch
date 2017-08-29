@@ -76,8 +76,20 @@ h1, h2, h3 {
 }
 
 // Only hides flash notices from logging in or logging out
-.alert-notice {
-   display: none;
+.flash-container {
+  position: absolute;
+  width: 100%;
+}
+
+// For the varying alerts displayed to a user
+.alert-notice, .alert-alert {
+  color:white;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.2);
+  //border-color: rgba(255, 255, 255, 0.5);
+  margin-top: -14px;
 }
 
 .home-signup-links {
