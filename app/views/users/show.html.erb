@@ -1,5 +1,6 @@
 <!-- Corresponds to users_controller.erb file -->
 
+<%= image_tag @user.profile.avatar.url %>
 <!-- user can have .profile because a user has a profile in the database -->
 <%= @user.profile.first_name %> <%= @user.profile.last_name %>
 <%= @user.profile.job_title %>
