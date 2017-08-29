@@ -1,4 +1,5 @@
-<!-- Create a profile related to the user that is signing up. Related to profiles_controller
+<!-- Create of edit a profile related to the user that is signing up/logged in. Related to profiles_controller.
+for new, @profile in new action. Edit in edit action. In profiles_controller
 URL specified because it is nested.       :multipart needs to be there for image upload-->
 <%= form_for @profile, url: user_profile_path, :html => { :multipart => true } do |f| %>
    <div class="form-group">

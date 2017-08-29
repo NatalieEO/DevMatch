@@ -25,6 +25,14 @@ class ProfilesController < ApplicationController
       end
    end   
    
+   # GET to /users/:user_id/profile/edit
+   def edit
+      # @profile sent to _form.html.erb will already be filled out. Form on that page will be for
+      # a user that is already filled out
+      @user = User.find( params[:user_id] )
+      @profile = @user.profile 
+   end   
+   
    private
       def profile_params
          params.require(:profile).permit(:first_name, :last_name, :job_title, :avatar, :phone_number, :contact_email, :description)
