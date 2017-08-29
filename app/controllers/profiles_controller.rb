@@ -1,5 +1,12 @@
 class ProfilesController < ApplicationController
    
+   # Checks if the person browsing site is logged in. If they aren't, none of these profile
+   # related actions will run.
+   before_action :authenticate_user!      #, only: [:new, :edit]  you can specify certain actions
+   
+   # Makes it so users can only edit their own profile page. Function defined below.
+   before_action :only_current_user
+   
    # GET to /users/:user_id/profile/new
    def new
       # Render blank profile details form. Create a new profile object to be used in form.html.erb
@@ -54,5 +61,12 @@ class ProfilesController < ApplicationController
    private
       def profile_params
          params.require(:profile).permit(:first_name, :last_name, :job_title, :avatar, :phone_number, :contact_email, :description)
-      end   
+      end
+      
+      # Set @user to the id of the current user logged in. If the id does NOT match the id
+      # part of the URL they are trying to edit, then redirect them to the home page
+      def only_current_user
+         @user = User.find( params[:user_id] )
+         redirect_to(root_url) unless @user == current_user
+      end
 end
