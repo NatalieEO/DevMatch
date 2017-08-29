@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   #Edit some of devise's functionality. Devise will know if it's a basic or pro user
   devise_for :users, controllers: { registrations: 'users/registrations'}
   
+  # Nested routes. Each of our users will have profile resource
+  # :user_id in routes refers to the actual id value in the database
   resources :users do
     #singular because a user only has one profile
     resource :profile
-  end  
+  end
+  
   get 'about', to: 'pages#about'
   
   # resources will have rails create 7 different routes, but we only need

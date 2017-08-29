@@ -25,4 +25,6 @@
             </div>
         </div>
     </div>
+    <!-- Only display the link if a user is signed in. Pass the current user id into the URL to make it dynamic.  -->
+    <%= link_to "Create your profile", new_user_profile_path(user_id: current_user.id) if user_signed_in? %>
 </div>
