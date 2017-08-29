@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'pages#home'
+  #Edit some of devise's functionality. Devise will know if it's a basic or pro user
+  devise_for :users, controllers: { registrations: 'users/registrations'}
   get 'about', to: 'pages#about'
   
   # resources will have rails create 7 different routes, but we only need
