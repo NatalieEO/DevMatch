@@ -1,4 +1,5 @@
-<!-- Create a profile related to the user that is signing up. Related to profiles_controller-->
+<!-- Create a profile related to the user that is signing up. Related to profiles_controller
+URL specified because it is nested-->
 <%= form_for @profile, url: user_profile_path do |f| %>
    <div class="form-group">
       <%= f.label :first_name %>
