@@ -49,6 +49,9 @@ gem 'figaro', '1.1.1'
 # Use Paperclip for image upload
 gem 'paperclip', '4.3.6'
 
+# User will_paginate to paginate page where all users are displayed
+gem 'will_paginate', '3.1.1'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
