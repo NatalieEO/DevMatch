@@ -5,7 +5,8 @@ class UsersController < ApplicationController
    
    def index
       # Combines user and profile table into one query for faster load times
-      @users = User.includes(:profile)
+      # @users = User.includes(:profile)
+      @users = User.paginate(:page => params[:page], :per_page => 5)
    end 
    
    # GET to /users/:id     Show action when you want to show an individual resource

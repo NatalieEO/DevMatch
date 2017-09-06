@@ -39,6 +39,8 @@
                   </li>
                <% end %>
             <% end %>
+            <!-- Use gem to make users show up on multiple pages -->
+            <%= will_paginate @posts %>
          </ul>
       </div>
    </div>
