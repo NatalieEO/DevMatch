@@ -40,7 +40,7 @@
                <% end %>
             <% end %>
             <!-- Use gem to make users show up on multiple pages -->
-            <%= will_paginate @posts %>
+            <%= will_paginate @users, class: 'text-center flickr_pagination' %>
          </ul>
       </div>
    </div>
